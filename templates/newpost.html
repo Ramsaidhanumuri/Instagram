@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container-fluid d-flex flex-wrap justify-content-center">
+  <div class="phone-app-demo-newpost">
+    <img src="{% static 'assets2/images/mobile-app.png' %}" alt="">
+  </div>
+  <div class="form-data shadow-sm p-3 mb-5 bg-white rounded">
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="logo">
+        <h3 style="padding: 20px; font-size: 20px;">Create New Post</h3>
+      </div>
+      <!-- {{form|crispy}} -->
+      {{form.picture}} <br>
+      {{form.caption}} <br>
+      {{form.tag}} <br>
+      <button class="form-btn" type="submit">Post</button>
+      <!-- <a href="index.html" class="form-btn" type="submit">Log in</a> -->
+    </form>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <nav class="d-flex flex-wrap justify-content-center foo-text">
+      <li class="p-2">
+        <a href="#">About us</a>
+      </li>
+      <li class="p-2">
+        <a href="#">Support</a>
+      </li>
+      <li class="p-2">
+        <a href="#">Press</a>
+      </li>
+      <li class="p-2">
+        <a href="#">Api</a>
+      </li>
+      <li class="p-2">
+        <a href="#">Jobs</a>
+      </li>
+      <li class="p-2">
+        <a href="#">Privacy</a>
+      </li>
+      <li class="p-2">
+        <a href="#">Terms</a>
+      </li>
+      <li class="p-2">
+        <a href="#">Directory</a>
+      </li>
+      <li class="p-2">
+        <a href="#">Profiles</a>
+      </li>
+      <li class="p-2">
+        <a href="#">Hashtags</a>
+      </li>
+      <li class="p-2">
+        <a href="#">Languages</a>
+      </li>
+    </nav>
+    <div class="copyright-notice d-flex justify-content-center">
+      &copy 2022 Instagram
+    </div>
+  </div>
+</footer>
+
+{% endblock content %}
